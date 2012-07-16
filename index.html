@@ -19,13 +19,38 @@
         <p>Realtime binary streaming for the web using websockets</p>
 
 
-        <p class="view"><a href="https://github.com/binaryjs">View My GitHub Profile</a></p>
+        <p class="view"><a href="https://github.com/binaryjs/binaryjs">View My GitHub Profile</a></p>
 
       </header>
       
       <section>
       
-      <h3>It's time for binary for the web</h3>
+      <h3>Binary data for the web is here</h3>
+      <p>A year ago if someone asked you "how do I stream binary data / audio / video / files to Javascript", the answer was "Flash" or "no" (or "Java applets") </p>
+      <p>But as of Chrome 15+, Firefox 11+, Internet Explorer 10, and Safari nightly builds, that is no longer true.<p>
+      <p>BinaryJS is a light but comprehensive framework utilizing websockets to:</p>
+      <ul>
+        <li>Send, stream, or pipe binary data between web clients and Node.js</li>
+        <li>Data is never stringified. Everything is only ever binary</li>
+        <li>BinaryPack serialization is included and fully JSON compatible</li>
+        <li>Multiplexed websocket streams. A client and server can send any number of streams to each other</li>
+        <li>Adherence to Node.js read/write Streams API so you can pipe any stream into BinaryJS streams (and vice-versa)</li>
+        <li>"pause", "resume", and "end" streams as in the Streams API</li>
+      </ul>
+      
+      <h3>What can you do with this?</h3>
+      <p>You have just as much flexibility as a full tcp socket between client and server</p>
+      <p>Here are some ideas that are now possible (beta-testers are already working on some!):</p>
+      <ul>
+        <li>Streaming FLAC into HTML5 WebAudio api</li>
+        <li>Progressive image loading (for retina displays and high-res photorgraphy)</li>
+        <li>Multiplayer video games without expensive stringifying</li>
+        <li>Live HTML &lt;video&gt; streaming</li>
+        <li>PJAX with no http requests. Not even for image assets.</li>
+        <li>Video / audio chat over websockets</li>
+      </ul>
+      <h3>Show me the API</h3>
+      <p>The BinaryJS allows multiple streams over a single socket connection. Either the server and create a stream and both client and server can write to it once created.</p>
       
       <!--
         <h3>Welcome to GitHub Pages.</h3>
