@@ -24,18 +24,6 @@
       </header>
       
       <section>
-      <h3>Show me the API</h3>
-      <p>BinaryJS allows multiple streams over a single realtime websocket connection. Either the client or server can create a stream and both client and server can write to it once created.</p>
-<pre><code>
-var server = BinaryServer({port: 9000});
-server.on('connection', function(client){
-  client.on('stream', function(stream){
-    var w = fs.createWriteStream(stream.id+'.txt');
-    stream.pipe(w);
-  }); 
-});
-</code></pre>     
- 
       <h3>Binary data for the web is here</h3>
       <p>A year ago if someone asked you "how do I stream binary data / audio / video / files to Javascript", the answer was "Flash" or "no" (or "Java applets") </p>
       <p>But as of Chrome 15+, Firefox 11+, Internet Explorer 10, and Safari nightly builds, that is no longer true.<p>
@@ -48,6 +36,34 @@ server.on('connection', function(client){
         <li>Adherence to Node.js read/write Streams API so you can pipe any stream into BinaryJS streams (and vice-versa)</li>
         <li>"pause", "resume", and "end" streams as in the Streams API</li>
       </ul>
+      <h3>Show me the API</h3>
+      <p>BinaryJS allows multiple streams (of pure binary data!) over a single realtime websocket connection. Either the client or server can create a stream and both client and server can write to it once created.</p>
+Node.js server<br>
+<pre><code>var server = BinaryServer({port: 9000});
+server.on('connection', function(client){
+  client.on('stream', function(stream, meta){
+    var file = fs.createWriteStream(meta.file);
+    stream.pipe(file);
+  }); 
+});
+</code></pre>     
+
+Browser:<br>
+<pre><code>var client = BinaryClient('ws://localhost:9000');
+client.on('open', function(stream){
+  var stream = client.createStream({file: 'hello.txt'});
+  stream.write('Hello');
+  stream.write('World!');
+  stream.end();
+});
+</code></pre>
+
+      <p>
+        <a href="">View the "Hello world" example</a>
+      </p>
+      <p>
+        <a href="/examples.html">See more examples</a>
+      </p>
       
       <h3>What can you do with this?</h3>
       <p>You have just as much flexibility as a full tcp socket between client and server</p>
@@ -56,7 +72,7 @@ server.on('connection', function(client){
         <li>Streaming FLAC into HTML5 WebAudio api</li>
         <li>Progressive image loading (for retina displays and high-res photorgraphy)</li>
         <li>Multiplayer video games without expensive stringifying</li>
-        <li>Streaming file uploads (see example)</li>
+        <li>Streaming file uploads <a href="">Example</a></li>
         <li>Live HTML &lt;video&gt; streaming</li>
         <li>PJAX with no http requests. Not even for image assets.</li>
         <li>Video / audio chat over websockets</li>
