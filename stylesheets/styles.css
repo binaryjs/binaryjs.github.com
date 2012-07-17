@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+@import url(https://fonts.googleapis.com/css?family=Lato:400italic,700italic,400,700);
 
 body {
   padding:50px;
@@ -58,7 +58,7 @@ blockquote {
 }
 
 code, pre {
-  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal;
+  font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Courier, monospace;
   color:#333;
   font-size:12px;
 }
