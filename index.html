@@ -17,12 +17,11 @@
       <header>
         <h1>BinaryJS</h1>
         <p>Realtime binary streaming for the web using websockets</p>
-
         <p class="view"><a href="https://github.com/binaryjs/binaryjs">Get Started</a></p>
         <p class="view"><a href="https://github.com/binaryjs/binaryjs">Documentation</a></p>
         <p class="view"><a href="https://github.com/binaryjs/binaryjs">Examples / Demos</a></p>
         <p class="view"><a href="http://groups.google.com/group/binaryjs-group">Mailing List</a> / <a href="https://twitter.com/binaryjs">Twitter</a> / <a href="https://github.com/binaryjs/binaryjs">GitHub</a></p>
-
+        <p><a href="https://secure.travis-ci.org/binaryjs/binaryjs"><img src="https://secure.travis-ci.org/binaryjs/binaryjs.png"></a></p>
       </header>
       
       <section>
@@ -38,7 +37,7 @@
         <li>"pause," "resume," and "end" as in the Streams API</li>
       </ul>
       <h3>Show me the API</h3>
-      <p>BinaryJS allows multiple streams (of pure binary data!) over a single realtime websocket connection. Either the client or server can create a stream and both client and server can write to it once it’s created.</p>
+      <p>BinaryJS allows multiple streams (of pure binary data!) over a single realtime websocket connection. Either the client or server can create a stream that both client and server can write to.</p>
 Node.js server<br>
 <pre><code>var server = BinaryServer({port: 9000});
 server.on('connection', function(client){
@@ -122,7 +121,9 @@ $ git checkout gh-pages
       
       </section>
       <footer>
-        <p><small><a href="http://ericzhang.com">I am unemployed</a> &dash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=binaryjs&repo=binaryjs&type=watch"
+  allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>&nbsp;&nbsp;<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=binaryjs&repo=binaryjs&type=fork"
+  allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe><br><small><a href="http://ericzhang.com">I am unemployed</a> &dash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <a href="https://github.com/binaryjs/binaryjs"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
