@@ -18,14 +18,15 @@
         <h1>BinaryJS</h1>
         <p>Realtime binary streaming for the web using websockets</p>
         <p class="view"><a href="https://github.com/binaryjs/binaryjs">Get Started</a></p>
-        <p class="view"><a href="https://github.com/binaryjs/binaryjs">Documentation</a></p>
-        <p class="view"><a href="https://github.com/binaryjs/binaryjs">Examples / Demos</a></p>
+        <p class="view"><a href="https://github.com/binaryjs/binaryjs/doc">Documentation</a></p>
+        <p class="view"><a href="https://github.com/binaryjs/binaryjs/tree/master/examples">Examples / Demos</a></p>
         <p class="view"><a href="http://groups.google.com/group/binaryjs-group">Mailing List</a> / <a href="https://twitter.com/binaryjs">Twitter</a> / <a href="https://github.com/binaryjs/binaryjs">GitHub</a></p>
         <p><a href="https://secure.travis-ci.org/binaryjs/binaryjs"><img src="https://secure.travis-ci.org/binaryjs/binaryjs.png"></a></p>
       </header>
       
       <section>
       <h3>Binary data for the web is here</h3>
+      <p><strong>BinaryJS is bidrectional realtime binary data with binary websockets</strong></p>
       <p>A year ago if someone asked you "how do I stream binary data / audio / video / files to Javascript?" the answer would have been "Flash" or "no" (or "Java applets")</p>
       <p>But as of Chrome 15+, Firefox 11+, Internet Explorer 10, and Safari nightly builds, that is no longer true.<p>
       <p>BinaryJS is a lightweight framework that utilizes websockets to send, stream, and pipe binary data bidirectionally between browser javascript and Node.js.</p>
@@ -57,9 +58,11 @@ client.on('open', function(stream){
   stream.end();
 });
 </code></pre>
-
       <p>
-        <a href="">View the "Hello world" example</a>
+        <a href="https://github.com/binaryjs/binaryjs/blob/master/doc/api.md">View the API reference</a>
+      </p>
+      <p>
+        <a href="https://github.com/binaryjs/binaryjs/tree/master/examples/helloworld">View the "Hello world" example</a>
       </p>
       <p>
         <a href="/examples.html">See more examples</a>
@@ -69,15 +72,15 @@ client.on('open', function(stream){
       <p>You have just as much flexibility as a full TCP socket between client and server</p>
       <p>Here are some ideas that are now possible (beta-testers are already working on some!):</p>
       <ul>
+        <li>Realtime multiplayer video games without expensive stringifying</li>
         <li>Streaming FLAC into HTML5 WebAudio api</li>
         <li>Progressive image loading (for retina displays and high-res photorgraphy)</li>
-        <li>Multiplayer video games without expensive stringifying</li>
-        <li>Streaming file uploads <a href="">Example</a></li>
+        <li>Streaming file uploads <a href="https://github.com/binaryjs/binaryjs/tree/master/examples/fileupload">Example</a></li>
         <li>Live HTML &lt;video&gt; streaming</li>
         <li>PJAX with no HTTP requests. Not even for image assets</li>
         <li>Video / audio chat over websockets</li>
       </ul>
-      <h3>Technical details</h3>
+      <h3>Additional details</h3>
       <p>BinaryJS employs `BinaryPack` a modified version of the MessagePack protocol. The Node.js server uses a modified version of the `ws` library enhanced to pass through the status of the socket buffer so adherence to Node.js Stream API is possible.</p>
       <p>Both the server and the client can write or accept any arbitrary JSON type or structure &#8211; Objects, arrays, null, booleans, strings &#8211; and also binary data. Because BinaryPack is a binary protocol, the wire format has negligible serialization/deserialization overhead for large chunks of binary data. This also means binary data types such as Buffer in Node.js and Blob or ArrayBuffer in the client can be serialized and deserialized.</p>
       <p>On the client, feature detection is employed to choose between using BlobBuilder, the Blob constructor, and ArrayBufferViews or ArrayBuffers themselves for assembling Blobs for transport.</p>
@@ -123,7 +126,8 @@ $ git checkout gh-pages
       <footer>
         <p><iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=binaryjs&repo=binaryjs&type=watch"
   allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe>&nbsp;&nbsp;<iframe src="http://markdotto.github.com/github-buttons/github-btn.html?user=binaryjs&repo=binaryjs&type=fork"
-  allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe><br><small><a href="http://ericzhang.com">I am unemployed</a> &dash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+  allowtransparency="true" frameborder="0" scrolling="0" width="62px" height="20px"></iframe><a href="https://twitter.com/binaryjs" class="twitter-follow-button" data-show-count="false">Follow @binaryjs</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script><br><small><a href="http://ericzhang.com">I am unemployed</a> &dash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
     <a href="https://github.com/binaryjs/binaryjs"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
