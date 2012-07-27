@@ -98,6 +98,12 @@ client.on('open', function(stream){
         <li>iOS and Android clients</li>
         <li>Ruby, Python, Java servers</li>
       </ul>
+      <h3>Limitations and issues</h3>
+      <ul>
+        <li>Currently supports Chrome 15+ and Firefox 11+, IE10. Fallbacks that will support Safari, mobile iOS and Android, and older FF/Chrome versions are in the works</li>
+        <li>Performance is largely untested. Though BinaryPack serialization results in smaller data, I have not compared to native JSON serialization performance. C++ BinaryPack Node.js module is in the works</li>
+        
+      </ul>
       <h3>Support and questions</h3>
       <p>If you need help with BinaryJS please add questions to the <a href="http://groups.google.com/group/binaryjs-group">mailing list</a>. Otherwise you can email me at <a href="mailto:really.ez+1010@gmail.com">really.ez+1010@gmail.com</a></p>
       <p>Please file a <a href="https://github.com/binaryjs/binaryjs/issues">GitHub issue</a> for the bugs you find.</p>
